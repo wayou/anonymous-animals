@@ -12,8 +12,15 @@ before_script:
 script: 
   - python download_animals.py
 
+# http://stackoverflow.com/questions/23277391/how-to-publish-to-github-pages-from-travis-ci
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $GH_TOKEN # Set in travis-ci.org dashboard
+#   on:
+#     branch: master
+
 after_success:
 - git add -A .
-- git commit -m "site updated via travis-ci at $(date -u +'%Y-%m-%d %H:%M:%S') $TRAVIS_COMMIT"
-- git checkout master
-- git push -q $GH_TOKEN HEAD:master
+- git commit -m "[skip ci] icons fetched via travis-ci at $(date -u +'%Y-%m-%d %H:%M:%S') $TRAVIS_COMMIT"
+- git push $GH_TOKEN HEAD:master
