@@ -1,0 +1,19 @@
+language: python
+python:
+  - "3.6"
+
+install: 
+
+before_script:
+- git config --global user.name 'wayou'
+- git config --global user.email 'liuwayong@gmail.com'
+
+# command to run tests
+script: 
+  - python download_animals.py
+
+after_success:
+- git add -A .
+- git commit -m "site updated via travis-ci at $(date -u +'%Y-%m-%d %H:%M:%S') $TRAVIS_COMMIT"
+- git branch -m master
+- git push -q $GH_TOKEN HEAD:master
