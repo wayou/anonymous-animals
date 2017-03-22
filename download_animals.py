@@ -13,8 +13,8 @@ os.makedirs(dirname)
 
 for index, icon in enumerate(iconList):
     filename = dirname + '/' + icon + '.png'
-    print('#%s\tfetching %s' % (index, filename))
     url = 'https://ssl.gstatic.com/docs/common/profile/' + icon + '_lg.png'
+    print('#%s\tfetching %s' % (index, url))
     urllib.request.urlretrieve(url, filename)
 
 # TODO: write all icons to index.html
