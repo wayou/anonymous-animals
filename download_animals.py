@@ -16,6 +16,10 @@ for index, icon in enumerate(iconList):
     filename = dirname + '/' + icon + '.png'
     url = 'https://ssl.gstatic.com/docs/common/profile/' + icon + '_lg.png'
     print('#%s\tfetching %s' % (index, url))
-    urllib.request.urlretrieve(url, filename)
+    try:
+        urllib.request.urlretrieve(url, filename)
+    except:
+        print('#%s\tfailed %s' % (index, url))
+        pass
 
 # TODO: write all icons to index.html
