@@ -2,6 +2,10 @@ language: python
 python:
   - "3.6"
 
+env:
+  global:
+    - "REPO=https://$GH_TOKEN@github.com/wayou/anonymous-animals.git"
+
 install: 
 
 before_script:
@@ -23,4 +27,4 @@ script:
 after_success:
 - git add -A .
 - git commit -m "[skip ci] icons fetched via travis-ci at $(date -u +'%Y-%m-%d %H:%M:%S') $TRAVIS_COMMIT"
-- git push $GH_TOKEN HEAD:master
+- git push $REPO HEAD:master
