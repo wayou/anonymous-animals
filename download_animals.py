@@ -31,7 +31,7 @@ for index, icon in enumerate(iconList):
     url = 'https://ssl.gstatic.com/docs/common/profile/' + icon + '_lg.png'
     print('#%s\tfetching %s' % (index, url))
     try:
-        html_icon_list = html_icon_list + '<li class="animal-item"><img src="icons/' + filename + '" alt="' + icon + '"></li>\n'
+        html_icon_list = html_icon_list + '<li class="animal-item"><img src="' + filename + '" alt="' + icon + '"></li>\n'
         urllib.request.urlretrieve(url, filename)
     except Exception:
         print('#%s\tfailed %s' % (index, url))
