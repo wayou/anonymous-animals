@@ -49,7 +49,7 @@ html_wrapper = """
                 padding: 0;
             }
             body{
-                background-color: #f5f5f5;
+                background-color: #484343;
             }
             ul.animal-list{
                 list-style: none;
