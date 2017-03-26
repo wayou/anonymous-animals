@@ -13,7 +13,7 @@ iconList = ('Alligator', 'Anteater', 'Armadillo', 'Auroch', 'Axolotl',
             'Grizzly', 'Hedgehog', 'Hippo', 'Hyena', 'Ibex', 'Ifrit', 'Iguana',
             'Jackal', 'Kangaroo', 'Koala', 'Kraken', 'Lemur', 'Leopard',
             'Liger', 'Llama', 'Manatee', 'Mink', 'Monkey', 'Moose', 'Narwhal',
-            'NyanCat', 'Orangutan', 'Otter', 'Panda', 'Penguin', 'Platypus',
+            'Nyan Cat', 'Orangutan', 'Otter', 'Panda', 'Penguin', 'Platypus',
             'Pumpkin', 'Python', 'Quagga', 'Rabbit', 'Raccoon', 'Rhino',
             'Sheep', 'Shrew', 'Skunk', 'Squirrel', 'Tiger', 'Turtle', 'Walrus',
             'Wolf', 'Wolverine', 'Wombat')
@@ -26,13 +26,13 @@ os.makedirs(dirname)
 html_icon_list = ''
 
 for index, icon in enumerate(iconList):
-    icon = icon.lower()
-    filename = dirname + '/' + icon + '.png'
-    url = 'https://ssl.gstatic.com/docs/common/profile/' + icon + '_lg.png'
+    filename = icon.replace(' ','').lower()
+    icon_path = dirname + '/' + icon + '.png'
+    url = 'https://ssl.gstatic.com/docs/common/profile/' + filename + '_lg.png'
     print('#%s\tfetching %s' % (index, url))
     try:
-        html_icon_list = html_icon_list + '<li class="animal-item"><img src="' + filename + '" alt="' + icon + '" title="' + icon + '"></li>\n'
-        urllib.request.urlretrieve(url, filename)
+        html_icon_list = html_icon_list + '<li class="animal-item"><img src="' + icon_path + '" alt="' + icon + '" title="' + icon + '"></li>\n'
+        urllib.request.urlretrieve(url, icon_path)
     except Exception:
         print('#%s\tfailed %s' % (index, url))
 
