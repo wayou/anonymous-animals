@@ -17,6 +17,7 @@ script:
   - python download_animals.py
 
 after_success:
+- git pull
 - git add -A .
 - git commit -m "[skip ci] icons fetched via travis-ci at $(date -u +'%Y-%m-%d %H:%M:%S') $TRAVIS_COMMIT"
 - git push $REPO HEAD:master
