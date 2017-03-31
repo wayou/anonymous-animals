@@ -4,3 +4,5 @@
 icons of the anonymous animals used for anonymous users in google doc
 
 ![](https://github.com/wayou/anonymous-animals/raw/master/assets/screen-shot.png)
+
+![](https://github.com/wayou/anonymous-animals/raw/master/assets/anonymous_animals.png)
