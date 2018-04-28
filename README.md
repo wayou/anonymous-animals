@@ -12,4 +12,4 @@ Anonymous animal icons used for anonymous users extracted from Google Docs.
 
 ### License
 
-The code is licensed under the MIT license wihle pictures belongs to Google.
+The code is licensed under the MIT license wihle pictures belong to Google.
