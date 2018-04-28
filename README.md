@@ -1,7 +1,7 @@
 # anonymous-animals
 [![](https://api.travis-ci.org/wayou/anonymous-animals.svg?branch=master)](https://travis-ci.org/wayou/anonymous-animals)
 
-Anonymous animal icons used for anonymous users in Google docs.
+Anonymous animal icons used for anonymous users extracted from Google Docs.
 
 ### screenshots
 
