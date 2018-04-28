@@ -10,6 +10,10 @@ Anonymous animal icons used for anonymous users extracted from Google Docs.
 ![](https://github.com/wayou/anonymous-animals/raw/master/assets/anonymous_animals.png)
 
 
+### Side notes
+
+the author of the animals: http://www.jeffersoncheng.com/Anonymous-Animals
+
 ### License
 
 The code is licensed under the MIT license wihle pictures belong to Google.
