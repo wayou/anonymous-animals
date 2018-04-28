@@ -1,0 +1,31 @@
+language: python
+python:
+  - "3.6"
+
+env:
+  global:
+    - "REPO=https://$GH_TOKEN@github.com/wayou/anonymous-animals.git"
+
+install: 
+
+before_script:
+- git config --global user.name 'wayou'
+- git config --global user.email 'liuwayong@gmail.com'
+
+# command to run tests
+script: 
+  - python download_animals.py
+
+after_success:
+- git pull
+- git add -A .
+- git commit -m "[skip ci] icons fetched via travis-ci at $(date -u +'%Y-%m-%d %H:%M:%S') $TRAVIS_COMMIT"
+- git push $REPO HEAD:master
+
+# http://stackoverflow.com/questions/23277391/how-to-publish-to-github-pages-from-travis-ci
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN # Set in travis-ci.org dashboard
+  on:
+    branch: master
